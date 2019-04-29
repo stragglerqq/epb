@@ -1,4 +1,4 @@
-pragma solidity ^0.4.23;
+pragma solidity >=0.4.23;
 
 contract EtherPowerBallBase {
     address admin;
@@ -48,12 +48,12 @@ contract EtherPowerBallBase {
         }
     }
 
-    function addCuponToBuyer(Cupon _cupon) internal {
+    function addCuponToBuyer(Cupon memory _cupon) internal {
         buyer.numberOfCupons += 1;
         buyer.cupons.push(_cupon);
     }
 
-    function generateSingleCupon() private returns (Cupon _cupon) {
+    function generateSingleCupon() private returns (Cupon memory _cupon) {
         uint[] memory numbers = new uint[](7);
         for(uint i = 0; i < 7; i++) {
             numbers[i] = randomNumber();

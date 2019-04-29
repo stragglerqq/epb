@@ -3,7 +3,7 @@ var EtherPowerBallBase = artifacts.require("./EtherPowerBallBase.sol");
 contract('EtherPowerBall', function(accounts) {
     var etherPowerBallBaseInstance;
     var buyer = accounts[1];
-    var cuponPrice = 10000000000000000; // in wei 0.01eth
+    var cuponPrice = 1000000000000000; // in wei 0.01eth
     var numberOfCupons;
     it('initializes the contract with the correct values', function() {
         return EtherPowerBallBase.deployed().then(function(instance) {
